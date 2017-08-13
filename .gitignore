@@ -1,0 +1,10 @@
+**/.DS_Store
+**/.ipynb_checkpoints
+**/*.pickle
+.log
+**/*.zip
+/vehicles
+/non_vehicles
+/object_detection_crowdai
+*.gz
+/vehicle_crowdai
