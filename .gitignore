@@ -8,3 +8,4 @@
 /object_detection_crowdai
 *.gz
 /vehicle_crowdai
+/__pycache__
