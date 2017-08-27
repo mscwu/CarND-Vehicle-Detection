@@ -25,7 +25,7 @@ The goals / steps of this project are the following:
 ---
 ### Writeup / README
 
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  [Here](https://github.com/udacity/CarND-Vehicle-Detection/blob/master/writeup_template.md) is a template writeup for this project you can use as a guide and a starting point.  
+#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  
 
 You're reading it!
 
@@ -35,7 +35,7 @@ You're reading it!
 
 For a machine learning problem, it is very important to work with a good dataset from the very beginning. GTI and KITTI image databases are widely used for research and industry purposes. Additionaly, CrowdAI also provides label vehicle images gathered in the US. After observing the GTI database, I immediately found that the vehicle images are collected based on a continuous video stream therefore, even though there are over 3000 vehicle images in the database, to optimize the classifier, I only plan to use a fraction of them. After subsampling the GTI dataset, new data from CrowAI is added to balance the positive and negative samples. Details on the implementation can be found in this [notebook](https://github.com/mscwu/udacity_vehicle_detection/blob/master/create_pickled_data.ipynb).
 
-After a good dataset is created, I stored it in a pickle file.  
+After a good dataset was created, I stored it in a pickle file.  
 
 To extract HOG features, I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -50,7 +50,7 @@ Here is an example using the `HSV` color space and HOG parameters of `orientatio
 
 #### 2. Explain how you settled on your final choice of HOG parameters.
 
-I mainly tried different number of HOG channels. I started with only 1 HSV HOG channel and later switched to using all of the channels as that offered improvements in classifier accuracy. Other HOG parameters did offer observable improvements.
+I mainly tried different number of HOG channels. I started with only 1 HSV HOG channel and later switched to using all of the channels as that offered improvements in classifier accuracy. Other HOG parameters did not offer observable improvements.
 
 #### 3. Describe how (and identify where in your code) you trained a classifier using your selected HOG features (and color features if you used them).
 
@@ -115,7 +115,7 @@ I tried the following combinations:
 | 4        | HSV | 3              |        16      |        16        |
 | 5        | HSV | 3              |        32      |        32        |
 
-In the end, the last combinations gave me the best accuracy. The final accuracy with HSV color space, 3 HOG channels, 32 spatial size and histogram bins, 9 orientaions, 8 pixcels per cell and 2 cells per block produced an accruacy of 98.97% on the test data set.  
+In the end, the last combination gave me the best accuracy. The final accuracy with HSV color space, 3 HOG channels, 32 spatial size and histogram bins, 9 orientaions, 8 pixcels per cell and 2 cells per block produced an accruacy of 98.97% on the test data set.  
 
 ### Sliding Window Search
 
@@ -156,8 +156,8 @@ Here is an example of the returned boxes. It can be told that the correction det
 ### Video Implementation
 
 #### 1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
-Here's a [link on YouTube](https://youtu.be/tqexeLE131I)
+Here's a [link to my video result](./project_video_output.mp4).  
+Here's a [link on YouTube](https://youtu.be/tqexeLE131I).  
 
 #### 2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
 
